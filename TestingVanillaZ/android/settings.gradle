@@ -1,0 +1,3 @@
+rootProject.name = 'TestingVanillaZ'
+
+include ':app'
