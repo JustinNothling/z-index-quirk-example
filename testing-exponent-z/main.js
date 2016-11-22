@@ -4,9 +4,16 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableHighlight
 } from 'react-native';
 
 class App extends React.Component {
+  componentWillMount() {
+    this.state = {
+      zIndexFour: 0
+    }
+  }
+
   render() {
     return (
       <View style={StyleSheet.absoluteFill}>
@@ -15,6 +22,19 @@ class App extends React.Component {
         </View>
         <One />
         <Two />
+        <TouchableHighlight
+          onPress={() => this.setState({zIndexFour:4})}
+          style={{
+            position: 'absolute',
+            width: 150,
+            height: 150,
+            top:0,
+            left:0,
+            backgroundColor:'pink',
+            zIndex: this.state.zIndexFour
+          }}>
+          <Text>{this.state.zIndexFour}</Text>
+        </TouchableHighlight>
       </View>
     );
   }
